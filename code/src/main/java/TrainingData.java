@@ -1,36 +1,15 @@
 import java.util.*;
+
 public class TrainingData {
 
 	String[] res;
-	public List <String> tr1= new ArrayList<String>();
-	
-	Hypothesis attr = new Hypothesis();
+	public ArrayList<String[]> tr1 = new ArrayList<String[]>();
 
 	TrainingData() {
-		tr1.add("Sunny Windy Warm Dry Yes");
-		tr1.add("Sunny NWind Hot Dry Yes");
-		tr1.add("NSunny Windy Hot Wet Yes");
-			}
+		tr1.add(new String[] { "sunny", "warm", "normal", "strong", "cool", "same" });
+		tr1.add(new String[] { "sunny", "warm", "high", "strong", "cool", "same" });
+		tr1.add(new String[] { "cloudy", "cold", "high", "weak", "warm", "change" });
+		tr1.add(new String[] { "cloudy", "cold", "high", "weak", "warm", "same" });
 
-	boolean classification = false;
-
-	
-	void genNxt(int index, TrainingData d)
-	{
-				res=tr1.get(index).split(" ");
-				for (int i = 0; i < (res.length)-1; i++) 
-				{	
-					if ("Yes".equalsIgnoreCase(res[i])) 
-					{
-						classification = true;
-					}
-					d.attr.features[i] = res[i];
-					
-					
-				}
-				
-		
-			
 	}
-	
 }
